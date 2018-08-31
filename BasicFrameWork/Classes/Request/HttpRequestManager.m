@@ -9,11 +9,14 @@
 #import "HttpRequestManager.h"
 #import "WBFileManager.h"
 
-#if DEBUG
+#ifdef DEV
+NSString *const hostUrl = @"https://obreathdev.obreathing.com";
+#elif DEBUG
 NSString *const hostUrl = @"https://obreathdev.obreathing.com";
 #else
 NSString *const hostUrl = @"https://obreathdev.obreathing.com";
 #endif
+
 
 @interface HttpRequestManager ()
 @property (nonatomic, strong) WBFileManager *fileManager;
