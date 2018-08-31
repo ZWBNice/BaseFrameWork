@@ -32,6 +32,15 @@ singleton_for_header(CMManager)
 - (BOOL)isBlankString:(NSString *)string;
 
 
+/**
+ 检查字符串是否为空
+
+ @param string 判断的字符串
+ @return @""
+ */
++ (NSString *)checkBlankString:(NSString *)string;
+
+
 #pragma mark - 判断是否为真实手机号码
 /**
  *  判断是否为真实手机号码
@@ -104,5 +113,57 @@ singleton_for_header(CMManager)
  */
 - (void)printCustomFontName;
 
+
+/**
+ 从钥匙串获取UUID
+
+ @return UUID
+ */
++ (NSString *)getUUIDFromKeyChain;
+
+
+/**
+ 存储UUID到钥匙串
+ */
++ (void)saveUUIDToKeyChain;
+
+/**
+ 获取UUID
+
+ @return UUID
+ */
++ (NSString *)getUUID;
+
+
+/**
+ 获取设备型号
+
+ @return 设备型号
+ */
++ (NSString*)deviceModelName;
+
+
+/**
+ 获取当前时间戳(秒)
+
+ @return 当前时间戳
+ */
++ (NSString *)getCurrentSecondsTimestamp;
+/**
+ 获取当前时间戳(毫秒)
+ 
+ @return 当前时间戳
+ */
+
++ (NSString *)getCurrentHoweSecondsTimestamp;
+
+
+/**
+ 获取当前的时间字符串
+
+ @param dateformatter @“yyyy-MM-dd”
+ @return 当前时间字符串
+ */
++ (NSString *)getCurrentDateWithFormatter:(NSString *)dateformatter;
 
 @end

@@ -30,4 +30,8 @@
 
 + (void)showSuccessText:(NSString *)successText;
 
++ (void)showErrorText:(NSString *)errorText;
+
++ (void)showProgress:(float)progress status:(NSString *)status;
+
 @end

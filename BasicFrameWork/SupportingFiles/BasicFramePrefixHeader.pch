@@ -9,7 +9,26 @@
 #ifndef BasicFramePrefixHeader_pch
 #define BasicFramePrefixHeader_pch
 
-// Include any system framework and library headers here that should be included in all compilation units.
-// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <Masonry/Masonry.h>
+#import <MJRefresh/MJRefresh.h>
+#import <Toast/Toast.h>
+
+
+#import "UIImageView+WebCache.h"
+#import "WBCommonHeader.h"
+#import "WBHelper.h"
+#import "NotificationConst.h"
+#import "DefineHeader.h"
+#import "ColorsHeader.h"
+#import "RequsetManager.h"
+#import "LocalizableManager.h"
+#import "UIImage+WB_CircleImage.h"
+#import "GSKAlertViewController.h"
+#import "CMManager.h"
+#import "UITableViewEmptyHeader.h"
+#import "LocalizableManager.h"
 #endif /* BasicFramePrefixHeader_pch */

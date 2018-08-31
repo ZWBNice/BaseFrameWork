@@ -32,7 +32,7 @@ static const NSTimeInterval minimumDismissTimeInterval = 2;
     
     NSInteger clickindex = 0;
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
-//    NSLog(@"传多个参数的第一个参数 %@",firstbtnTitle);
+    //    NSLog(@"传多个参数的第一个参数 %@",firstbtnTitle);
     if(cancelButtonTitle != nil && ![cancelButtonTitle isEqualToString:@""]){
         UIAlertAction *cancleAction = [UIAlertAction actionWithTitle:cancelButtonTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
             if(complementBlock){
@@ -41,7 +41,7 @@ static const NSTimeInterval minimumDismissTimeInterval = 2;
         }];
         [alert addAction:cancleAction];
     }
-
+    
     UIAlertAction *tempAction = [UIAlertAction actionWithTitle:firstbtnTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         if(complementBlock){
             complementBlock(clickindex);
@@ -66,7 +66,7 @@ static const NSTimeInterval minimumDismissTimeInterval = 2;
                     
                 }];
                 [alert addAction:tempAction];
-
+                
             }
             NSLog(@"otherString %@",otherString);
             if (!otherString) {
@@ -82,6 +82,7 @@ static const NSTimeInterval minimumDismissTimeInterval = 2;
 
 + (void)showSVProgressWithStatus:(NSString *)status{
     [SVProgressHUD showWithStatus:status];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
 }
 
 + (void)showSVProgressWithStatus:(NSString *)status withMaskType:(SVProgressHUDMaskType)type{
@@ -95,19 +96,29 @@ static const NSTimeInterval minimumDismissTimeInterval = 2;
 
 + (void)showSVProgressWithStatus:(NSString *)status withDismissTime:(NSTimeInterval)delay{
     [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD showWithStatus:status];
     [SVProgressHUD dismissWithDelay:delay];
 }
 
 + (void)showSuccessText:(NSString *)successText{
     [SVProgressHUD setMinimumDismissTimeInterval:minimumDismissTimeInterval];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    
     [SVProgressHUD showSuccessWithStatus:successText];
     
 }
 
 + (void)showErrorText:(NSString *)errorText{
     [SVProgressHUD setMinimumDismissTimeInterval:minimumDismissTimeInterval];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
     [SVProgressHUD showErrorWithStatus:errorText];
+}
+
++ (void)showProgress:(float)progress status:(NSString *)status{
+    [SVProgressHUD setMinimumDismissTimeInterval:minimumDismissTimeInterval];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+    [SVProgressHUD showProgress:progress status:status];
 }
 
 @end
